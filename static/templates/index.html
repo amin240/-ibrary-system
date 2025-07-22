@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url("https://images.unsplash.com/photo-1535909339361-9b9f1ff0c0c1") no-repeat center center fixed;
+            background-size: cover;
+        }
+        .overlay-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container h-100 d-flex align-items-center justify-content-center" style="min-height:100vh;">
+        <div class="overlay-box">
+            <h1>📚 Welcome to the Library System</h1>
+            <p>Borrow and return books easily online.</p>
+          <a href="{{ url_for('login') }}" class="btn btn-primary m-2">Login</a>
+            <a href="{{ url_for('register') }}" class="btn btn-outline-dark m-2">Register</a>
+        </div>
+    </div>
+</body>
+</html>

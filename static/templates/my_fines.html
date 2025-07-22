@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Fines</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-dark text-white">
+    <div class="container mt-5">
+        <h2 class="text-white mb-4">📄 My Fines</h2>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-secondary btn-sm mb-4">⬅ Back to Dashboard</a>
+        {% if fines %}
+            {% for book in fines %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ book['title'] }}</h5>
+                    <p>Fine: ${{ book['fine'] }}</p>
+                    {% if book['fine_paid'] == 0 %}
+                        <a href="{{ url_for('pay_fine_page', log_id=book['log_id']) }}" class="btn btn-success btn-sm">Pay</a>
+                    {% else %}
+                        <span class="text-success">✅ Paid</span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-info">No fines at the moment.</div>
+        {% endif %}
+    </div>
+</body>
+</html>
