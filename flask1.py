@@ -169,7 +169,7 @@ def dashboard():
         books=books,
         logs=logs,
         borrowed_book_users=borrowed_book_users,
-        book_fines=book_fines  # ✅ هنا التمرير المهم
+        book_fines=book_fines 
     )
 
 
